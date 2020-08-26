@@ -16,16 +16,16 @@ def upperCaser(string):
 ##################################################
 #################SUJET 2##########################
 ##################################################
-def isMultiply(x):
-    b=False
-    i=1
-    while i<x:
-        if i*3==x:
-            b=True 
-            break
-        else:
-            i+=1
-    return b
+def div_3(x):
+    while True:
+        if x==0 :
+            return True
+        if x==1 :
+            return False
+        if x==2 :
+            return False
+
+        x -= 3
 
 ##################################################
 #################SUJET 3##########################
