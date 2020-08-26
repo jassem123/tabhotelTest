@@ -17,15 +17,17 @@ def upperCaser(string):
 #################SUJET 2##########################
 ##################################################
 def div_3(x):
-    while True:
-        if x==0 :
-            return True
-        if x==1 :
-            return False
-        if x==2 :
-            return False
-
-        x -= 3
+    while True :
+        res = 0
+        for i in str(x):
+            res += int(i)
+        x = res
+        
+        if len(str(res)) == 1:
+            if res == 0 or res ==3 or res == 6 or res == 9:
+                return True
+            else :
+                return False
 
 ##################################################
 #################SUJET 3##########################
