@@ -79,18 +79,21 @@ def voisinsCases(plateau , cases):
 
 from itertools import chain
 def accessibles(plateau,case):
-    x=[]
-    h= voisinsCase(plateau,case)
-    for l in h:
-        a=voisinsCase(plateau,l)
-    #unnesting the nested list for better manipulation
-    b=list(chain.from_iterable(voisinsCases(plateau,a)))
-    x=a+b
-    #removing duplicates
-    x=list(set(x))
-    #removing base case
-    x.remove(case)
-    return x
+    cases = list(chain.from_iterable(voisinsCases( plateau , voisinsCase(plateau,case) )))
+    while True :
+        flag = False
+        for c in cases:
+            for cc in voisinsCase(plateau,c):
+                if cc not in cases :
+                    cases.append(cc)
+                    flag = not flag
+
+        if flag == False:
+            break
+
+
+    cases = list(set(cases))
+    return cases
     
 def chemin(plateau,cased ,casef):
     return (casef in accessibles(plateau,cased))
